@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta name="copyright" content="MACode ID, https://macodeid.com/" />
+
+    <title>BreastCancerDetectAI</title>
+
+    <link rel="stylesheet" href="../static/assets/css/maicons.css" />
+
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.css" />
+
+    <link
+      rel="stylesheet"
+      href="../static/assets/vendor/owl-carousel/css/owl.carousel.css"
+    />
+
+    <link rel="stylesheet" href="../static/assets/vendor/animate/animate.css" />
+
+    <link rel="stylesheet" href="../static/assets/css/theme.css" />
+  </head>
+  <body>
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+        <div class="container">
+          <img
+            src="../static/assets/img/logo.png"
+            alt="Description of image"
+          />
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupport"
+            aria-controls="navbarSupport"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupport">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('main') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('about_page') }}">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('doctors_page') }}">Doctors</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('blog_page') }}">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-primary ml-lg-3" href="{{ url_for('login') }}">Login</a>
+              </li>
+
+            </ul>
+          </div>
+          <!-- .navbar-collapse -->
+        </div>
+        <!-- .container -->
+      </nav>
+    </header>
+
+    <div
+      class="page-hero bg-image overlay-dark"
+      style="background-image: url(../static/assets/img/bg_image_1.jpg)"
+    >
+      <div class="hero-section">
+        <div class="container text-center wow zoomIn">
+          <span class="subhead">Let's make your life happier</span>
+          <h1 class="display-4">BreastCancerDetectAI</h1>
+          <a href="{{ url_for('model_page') }}" class="btn btn-primary">Let's Consult</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-light">
+      <div class="page-section py-3 mt-md-n5 custom-index">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-4 py-3 py-md-0">
+              <div class="card-service wow fadeInUp">
+                <div class="circle-shape bg-secondary text-white">
+                  <span class="mai-chatbubbles-outline"></span>
+                </div>
+                <p><span>Chat</span> with a doctors</p>
+              </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+              <div class="card-service wow fadeInUp">
+                <div class="circle-shape bg-primary text-white">
+                  <span class="mai-shield-checkmark"></span>
+                </div>
+                <p><span>One</span>-Health Protection</p>
+              </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+              <div class="card-service wow fadeInUp">
+                <div class="circle-shape bg-accent text-white">
+                  <span class="mai-basket"></span>
+                </div>
+                <p><span>One</span>-Health Pharmacy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- .page-section -->
+
+      <div class="page-section pb-0">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 py-3 wow fadeInUp">
+              <h1>
+                Welcome to Your Health <br />
+                Center
+              </h1>
+              <p style="color: grey; margin-bottom: 16px; text-align: justify;">
+                <strong>BreastCancerDetectAI</strong> is a pioneering project developed by a team of four dedicated students committed to raising awareness about breast cancer and making it easier for individuals to understand their health. Our AI-powered platform aims to provide accurate predictions and insights, helping users feel more informed and comfortable when checking for potential signs of breast cancer. Our mission is to empower individuals with the knowledge they need to take proactive steps towards their health and well-being. We believe that early detection and education are crucial in the fight against breast cancer, and our innovative tool is designed to make this process accessible and user-friendly for everyone. At BreastCancerDetectAI, we are passionate about using technology to make a positive impact on people's lives. Our team has worked tirelessly to create a platform that combines cutting-edge AI technology with a user-centric approach, ensuring that our users receive reliable and understandable results.
+            </p>
+            
+              <a href="{{ url_for('about_page') }}" class="btn btn-primary">Learn More</a>
+            </div>
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
+              <div class="img-place custom-img-1">
+                <img src="../static/assets/img/bg-doctor.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- .bg-light -->
+    </div>
+    <!-- .bg-light -->
+
+    <div class="page-section">
+      <div class="container">
+        <h1 class="text-center mb-5 wow fadeInUp">Top Doctors</h1>
+
+        <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
+          <div class="item">
+            <div class="card-doctor">
+              <div class="header">
+                <img src="../static/assets/img/doctors/dr-rajeev-agarwal.jpg" alt="" />
+                <div class="meta">
+                  <a href="{{ url_for('Rajeev_Agarwal_page') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                  </svg></a>
+                </div>
+              </div>
+              <div class="body">
+                <p class="text-xl mb-0">Dr. Rajeev Agarwal</p>
+                <span class="text-sm text-grey"
+                  >Surgical Oncologist, General Surgeon, Oncologist</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card-doctor">
+              <div class="header">
+                <img src="../static/assets/img/doctors/Dr kranti.png" alt="" />
+                <div class="meta">
+                  <a href="{{ url_for('Kalechelvi_page') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                  </svg></a>
+                </div>
+              </div>
+              <div class="body">
+                <p class="text-xl mb-0">Dr. Prof. K Kalaichelvi.</p>
+                <span class="text-sm text-grey">MBBS DM - Oncology MD - General Medicine
+
+                  Oncologist</span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card-doctor">
+              <div class="header">
+                <img src="../static/assets/img/doctors/Dr-Ramakant.jpeg" alt="" />
+                <div class="meta">
+                  <a href="{{ url_for('Ramakant_page') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                  </svg></a>
+                </div>
+              </div>
+              <div class="body">
+                <p class="text-xl mb-0">Dr. Ramakant Krishnaji Deshpande</p>
+                <span class="text-sm text-grey"
+                  >Surgical Oncologist, Oncologist</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card-doctor">
+              <div class="header">
+                <img src="../static/assets/img/doctors/DR- janki.jpeg" alt="" />
+                <div class="meta">
+                  <a href="{{ url_for('Jayanti_page') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                  </svg></a>
+                </div>
+              </div>
+              <div class="body">
+                <p class="text-xl mb-0">Dr. Jayanti Thumsi</p>
+                <span class="text-sm text-grey"></span>
+                  Breast Surgeon, General Surgeon, Oncologist</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card-doctor">
+              <div class="header">
+                <img src="../static/assets/img/doctors/doctor_1.jpg" alt="" />
+                <div class="meta">
+                  <a href="{{ url_for('Ramesh_sarin_page') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                  </svg></a>
+                </div>
+              </div>
+              <div class="body">
+                <p class="text-xl mb-0">Dr. Ramesh Sarin</p>
+                <span class="text-sm text-grey">General Surgeon, Oncologist, Breast Surgeon</span>
+              </div>
+            </div>
+          </div>
+   
+        </div>
+      </div>
+    </div>
+
+    <div class="page-section bg-light">
+      <div class="container">
+        <h1 class="text-center wow fadeInUp">Latest News</h1>
+        <div class="row mt-5">
+          <div class="col-lg-4 py-2 wow zoomIn">
+            <div class="card-blog">
+              <div class="header">
+                <div class="post-category">
+                  <a href="#">Breast Cancer</a>
+                </div>
+                <a href="blog-details.html" class="post-thumb">
+                  <img src="../static/assets/img/blog/Screenshot (269).png" alt="" />
+                </a>
+              </div>
+              <div class="body">
+                <h5 class="post-title">
+                  <a href="https://www.indiatoday.in/health/story/hina-khan-diagnosed-with-stage-3-breast-cancer-causes-symptoms-treatment-common-india-2559632-2024-06-28"
+                    >Hina Khan Diagnosed with Breast Cancer: Why is it Important
+                    TO have Regular Breast Screenings? Expert Speak....</a
+                  >
+                </h5>
+                <div class="site-info">
+                  <div class="avatar mr-2">
+                    <div class="avatar-img">
+                      <img src="../static/assets/img/person/th.jpeg" alt="" />
+                    </div>
+                    <span>Jigyasa Sahay @India.com news</span>
+                  </div>
+                  <span class="mai-time"></span> 3 days ago
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 py-2 wow zoomIn">
+            <div class="card-blog">
+              <div class="header">
+                <div class="post-category">
+                  <a href="#">Breast Cancer</a>
+                </div>
+                <a href="blog-details.html" class="post-thumb">
+                  <img src="../static/assets/img/blog/Screenshot (270).png" alt="" />
+                </a>
+              </div>
+              <div class="body">
+                <h5 class="post-title">
+                  <a href="https://www.india.com/health/post-cancer-care-foolproof-measures-for-survivors-to-stay-healthy-after-treatment-7050633/"
+                    >Post - Cancer Care : FoolProof Measures for Survivors To
+                    Stay Healthy After Treatment, tips for Cancer survivors to
+                    incorporate healthy lifestyle....</a
+                  >
+                </h5>
+                <div class="site-info">
+                  <div class="avatar mr-2">
+                    <div class="avatar-img">
+                      <img src="../static/assets/img/person/person_1.jpg" alt="" />
+                    </div>
+                    <span>Onam Gupta</span>
+                  </div>
+                  <span class="mai-time"></span> 1 weeks ago
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 py-2 wow zoomIn">
+            <div class="card-blog">
+              <div class="header">
+                <div class="post-category">
+                  <a href="#">Breast Cancer</a>
+                </div>
+                <a href="blog-details.html" class="post-thumb">
+                  <img src="../static/assets/img/blog/Screenshot (271).png" alt="" />
+                </a>
+              </div>
+              <div class="body">
+                <h5 class="post-title">
+                  <a href="https://www.freepressjournal.in/health/from-diagnosis-to-recovery-navigating-the-breast-cancer-journey"
+                    >From Diagnosis To Recovery: Navigating The Breast Cancer
+                    Journey , emerged as the most prevalent form of cancer
+                    affecting women worldwide....</a
+                  >
+                </h5>
+                <div class="site-info">
+                  <div class="avatar mr-2">
+                    <div class="avatar-img">
+                      <img src="../static/assets/img/person/person_2.jpg" alt="" />
+                    </div>
+                    <span>Dr Pritam Katariya</span>
+                  </div>
+                  <span class="mai-time"></span> 2 months ago
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 text-center mt-4 wow zoomIn">
+            <a  href="{{ url_for('blog_page') }}" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- .page-section -->
+
+    <div class="page-section">
+      <div class="container">
+        <h1 class="text-center wow fadeInUp">
+          For any Query Feel Free to Contact us
+        </h1>
+
+        <form class="main-form" action="https://api.web3forms.com/submit" method="POST" reset()>
+          <input type="hidden" name="access_key" value="f654137f-fa9c-4394-ba01-fd89ae31bb8d">
+
+          <div class="row mt-5">
+            <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+              <input type="text" class="form-control" placeholder="Full name" name="name"  required/>
+              <input
+                type="text"
+                class="form-control"
+                name="email"
+                placeholder="Email address.."
+                required 
+              />
+            </div>
+            <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+              <textarea
+                name="Query"
+                id="message"
+                class="form-control"
+                rows="6"
+                placeholder="Enter Query.."
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary mt-3 wow zoomIn">
+            Submit Request
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- .page-section -->
+
+    <div
+      class="page-section banner-home bg-image"
+      style="background-image: url(../static/assets/img/banner-pattern.svg)"
+    >
+      <p id="copyright">
+        Made for 7 th Semester Internal College Project - by
+        @BreastCancerDetectAI Team
+      </p>
+      <div class="container py-5 py-lg-0"></div>
+    </div>
+    <!-- .banner-home -->
+
+    <script src="../static/assets/js/jquery-3.5.1.min.js"></script>
+
+    <script src="../static/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../static/assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <script src="../static/assets/vendor/wow/wow.min.js"></script>
+
+    <script src="../static/assets/js/theme.js"></script>
+
+   
+  </body>
+</html>

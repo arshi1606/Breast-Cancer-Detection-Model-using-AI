@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News</title>
+    <link rel="stylesheet" href="/static/css/news_style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="copyright" content="MACode ID, https://macodeid.com/" />
+
+    <link rel="stylesheet" href="../static/assets/css/maicons.css" />
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="../static/assets/vendor/owl-carousel/css/owl.carousel.css"
+    />
+    <link rel="stylesheet" href="../static/assets/vendor/animate/animate.css" />
+    <link rel="stylesheet" href="../static/assets/css/theme.css" />
+
+    <style>
+      /* Adding margin between the buttons */
+      .search-button,
+      .home-button {
+        margin-left: 10px;
+      }
+
+      .home-button {
+        background-color: #6a0dad;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+
+      .home-button:hover {
+        background-color: #540b9e;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="main-nav container flex">
+        <a href="#" onclick="reload()" class="company-logo">
+          <img src="/static/assets/img/logo.png" alt="company logo" />
+        </a>
+        <div class="nav-links">
+          <ul class="flex">
+            <li
+              class="hover-link nav-item"
+              id="Breast Cancer"
+              onclick="onNavItemClick('Breast Cancer')"
+            >
+              Breast Cancer
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="Oncologist"
+              onclick="onNavItemClick('Oncologist')"
+            >
+              Doctor
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="Cancer remedies"
+              onclick="onNavItemClick('Cancer remedies')"
+            >
+              Cancer remedies
+            </li>
+          </ul>
+        </div>
+        <div class="search-bar flex">
+          <input
+            id="search-text"
+            type="text"
+            class="news-input"
+            placeholder="e.g. Medicine "
+          />
+          <button id="search-button" class="search-button">Search</button>
+          <!-- Home Button Added Here -->
+          <a href="{{ url_for('main') }}">
+            <button id="home-button" class="home-button">Home</button>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="cards-container container flex" id="cards-container"></div>
+    </main>
+
+    <template id="template-news-card">
+      <div class="card">
+        <div class="card-header">
+          <img
+            src="https://via.placeholder.com/400x200"
+            alt="news-image"
+            id="news-img"
+          />
+        </div>
+        <div class="card-content">
+          <h3 id="news-title">This is the Title</h3>
+          <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+          <p class="news-desc" id="news-desc">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+            saepe quis voluptatum quisquam vitae doloremque facilis molestias
+            quae ratione cumque!
+          </p>
+        </div>
+      </div>
+    </template>
+
+    <script src="/static/js/vendor/news_script.js"></script>
+  </body>
+</html>

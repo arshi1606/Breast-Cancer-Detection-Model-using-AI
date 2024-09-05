@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr.Ramakant Krishnaji Deshpande - Details</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #dbe7f1; /*  background color */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        overflow-y: auto;
+      }
+      .details {
+        background: #ffffff; /*  color for the inner layer */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 800px;
+        margin: 20px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .details img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid #bc58d8;
+        margin-bottom: 15px;
+      }
+      .details h1 {
+        font-size: 28px;
+        color: #333;
+        margin: 10px 0;
+      }
+      .details .info,
+      .details .bio,
+      .details .contact {
+        text-align: left;
+        width: 100%;
+        margin-top: 15px;
+      }
+      .details .info p,
+      .details .bio p,
+      .details .contact p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+        margin: 0;
+        padding: 10px 0;
+      }
+      .details .label {
+        color: #bc58d8;
+        font-weight: bold;
+      }
+      .details a {
+        text-decoration: none;
+        color: #bc58d8;
+        font-weight: bold;
+        border-bottom: 2px solid #bc58d8;
+        transition: color 0.3s, border-bottom-color 0.3s;
+        margin-top: 20px;
+      }
+      .details a:hover {
+        color: #bc58d8;
+        border-bottom-color: #bc58d8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="details">
+      <img
+        src="/static/assets/img/doctors/Dr-Ramakant.jpeg"
+        alt="Doctor's Picture"
+      />
+      <h1>Dr.Ramakant Krishnaji Deshpande</h1>
+      <div class="info">
+        <p><span class="label">Speciality:</span> Breast Cancer</p>
+        <p>
+          <span class="label">Clinic Address:</span> Lilavati Hospital and
+          Research Centre, bandra West,Mumbai
+        </p>
+        <p>
+          <span class="label">Academic Qualification:</span> MBBS, MS - General
+          Surgery
+        </p>
+        <p><span class="label">Experience in Field:</span>42 years</p>
+        <p>
+          <span class="label">Industry Experience:</span>He has conducted
+          thoracoscopic workshops for training Pulmonologists and Onco-surgeons
+          in Mumbai and Bangalore. He set-up the thoracoscopy surgical program
+          at the Kidwai Institute of Oncology at Bangalore in 1983 and at the
+          Tata Memorial Hospital in 2000.
+        </p>
+        <p>
+          <span class="label">Available Treatment:</span> Thoracic
+          Cancer,Gastrointestinal Cancer,Breast Cancer
+        </p>
+      </div>
+      <div class="bio">
+        <p>
+          <span class="label">Biography:</span>Dr. R K Deshpande is a Surgical
+          Oncologist at Sir H. N. Reliance Foundation Hospital and Research
+          Centre, Mumbai. He did his MBBS at Karnataka Medical College and his
+          MS at Tata Memorial Hospital, Mumbai. He has also earned higher
+          qualifications such as FICS, DHA and FAIS. He has worked at Tata
+          Memorial Hospital, Mumbai. His special interests are in management of
+          Thoracic Tumours [Lung and oesophagus], Breast cancer and Children's
+          Cancer. He has specialized in endoscopic surgery- particularly
+          Thoracoscopy.
+        </p>
+      </div>
+      <div class="contact">
+        <p><span class="label">Contact Info:</span> Phone: 07947413955</p>
+      </div>
+      <p><a href="{{ url_for('doctors_2') }}">Back to Profile</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Image Classification</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        text-align: center;
+      }
+
+      .jumbotron {
+        background-color: #b35fa1;
+        color: #ffffff;
+      }
+
+      #imageForm {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      #resultImage {
+        border-radius: 10px;
+        margin-top: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #resultPrediction {
+        margin-top: 10px;
+        font-size: 18px;
+      }
+
+      #predictionResults {
+        display: none;
+      }
+
+      .btn-success {
+        margin-right: 17%;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="jumbotron bg-primary">BreastCancerDetectAI</h1>
+      <br /><br />
+
+      <form
+        class="form-horizontal"
+        id="imageForm"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="imageInput"
+            >Upload Image:</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="file"
+              class="form-control"
+              placeholder="Hours Studied"
+              name="my_image"
+              id="imageInput"
+            />
+          </div>
+        </div>
+
+        <div class="form-group text-center">
+          <!-- Updated class to text-center -->
+          <div class="col-sm-offset-2 col-sm-10 mx-auto">
+            <!-- Updated class to mx-auto -->
+            <button
+              type="button"
+              class="btn btn-success"
+              onclick="submitForm()"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div id="predictionResults">
+        <img id="resultImage" height="400px" width="400px" />
+        <h2 id="resultPrediction"></h2>
+      </div>
+
+      <script>
+        function submitForm() {
+          var formData = new FormData($("#imageForm")[0]);
+
+          $.ajax({
+            type: "POST",
+            url: "/submit",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+              // Display the results on the same page
+              $("#resultImage").attr("src", response.img_path);
+              $("#resultPrediction").text(
+                "Your Prediction: " + response.prediction
+              );
+              $("#predictionResults").show();
+            },
+            error: function (error) {
+              console.log(error);
+            },
+          });
+        }
+      </script>
+    </div>
+  </body>
+</html>

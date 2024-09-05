@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr.Rajeev Agrawal - Details</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #dbe7f1; /*  background color */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        overflow-y: auto;
+      }
+      .details {
+        background: #ffffff; /*  color for the inner layer */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 800px;
+        margin: 20px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .details img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid #bc58d8;
+        margin-bottom: 15px;
+      }
+      .details h1 {
+        font-size: 28px;
+        color: #333;
+        margin: 10px 0;
+      }
+      .details .info,
+      .details .bio,
+      .details .contact {
+        text-align: left;
+        width: 100%;
+        margin-top: 15px;
+      }
+      .details .info p,
+      .details .bio p,
+      .details .contact p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+        margin: 0;
+        padding: 10px 0;
+      }
+      .details .label {
+        color: #bc58d8;
+        font-weight: bold;
+      }
+      .details a {
+        text-decoration: none;
+        color: #bc58d8;
+        font-weight: bold;
+        border-bottom: 2px solid #bc58d8;
+        transition: color 0.3s, border-bottom-color 0.3s;
+        margin-top: 20px;
+      }
+      .details a:hover {
+        color: #bc58d8;
+        border-bottom-color: #bc58d8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="details">
+      <img
+        src="/static/assets/img/doctors/dr-rajeev-agarwal.jpg"
+        alt="Doctor's Picture"
+      />
+      <h1>Dr.Rajeev Agrawal</h1>
+      <div class="info">
+        <p>
+          <span class="label">Speciality:</span> Breast conservation surgery,
+          sentinel node biopsy & breast reconstruction.
+        </p>
+        <p>
+          <span class="label">Clinic Address:</span> Room No. 7, 10th floor, CH
+          Baktawar Singh Rd, Medicity, Islampur Colony, Sector 38, Gurugram,
+          Haryana 122001
+        </p>
+        <p>
+          <span class="label">Academic Qualification:</span> MBBS, MS - General
+          Surgery
+        </p>
+        <p><span class="label">Experience in Field:</span>38 years</p>
+        <p>
+          <span class="label">Industry Experience:</span>Breast Oncology, Senior
+          Consultant- Medanta The Medicity, Gurgaon , currently working Surgical
+          Oncology, Senior Consultant- Medanta Mediclinic, Defence Colony ,
+          currently working Surgical Oncology , Senior Consultant- Sir Ganga Ram
+          Hospital, New Delhi
+        </p>
+        <p>
+          <span class="label">Available Treatment:</span> surgical oncology and
+          the concept of organ-based specialization in oncology
+        </p>
+      </div>
+      <div class="bio">
+        <p>
+          <span class="label">Biography:</span> The Director in the department
+          of Breast Services at Medanta - The Medicity Hospital, Dr. Rajeev
+          Agarwal is one of the renowned and senior most Oncologists of Northern
+          India. He has more than 25 + years of rich experience. He holds an
+          MBBS and MS Degree from GSV Medical College, Kanpur. He has acquired
+          specialized training in Surgical Oncology from Tata Memorial Hospital,
+          Mumbai. Rajeev Agarwal carries with him a vast experience of two
+          decades in this field. Dr. Agarwal has been practicing as a Surgical
+          Oncologist across various hospitals in Delhi. Rajeev Agarwal has
+          gained proficiency in the Management of Breast Cancer. Apart from
+          this, he caters to the management of other Cancers, as well. His
+          profound knowledge, experience, and seniority in the field of Surgical
+          Oncology have gained him name, fame and recognition. He is also an
+          invited faculty member at various conferences.
+        </p>
+      </div>
+      <div class="contact">
+        <p><span class="label">Contact Info:</span> Phone: 098111 07368</p>
+      </div>
+      <p><a href="{{ url_for('doctors_page') }}">Back to Profile</a></p>
+    </div>
+  </body>
+</html>
